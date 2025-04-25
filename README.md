@@ -19,20 +19,22 @@ devtools::install("path/to/marfima")
 Marfima_fit(data, p, d, q, method, d_method, verbose)
 Fits a Modified ARFIMA (MARFIMA) model to a univariate time series.
 
-Arguments:
-
-data: Numeric vector (time series)
-
-p, q: Non-seasonal AR and MA orders
-
-d: Differencing parameter (can be estimated if not provided)
-
-P, D, Q: Seasonal AR, differencing, and MA orders (optional, default = 0)
-
-method: ARIMA estimation method ("ML" or "CSS")
-
-d_method: Estimation method for d if not provided ("GPH" or "Whittle")
-
-verbose: Logical; whether to display ACF and PACF plots
-
-Returns:
+# 📥 Arguments 
+  - `data`: Numeric vector representing the time series. 
+  - `p`, `q`: Non-seasonal autoregressive (AR) and moving average (MA) orders. 
+  - `d`: Differencing parameter. Can be manually specified or estimated if not provided. 
+  - `method`: ARIMA estimation method. Options: - `"ML"`: Maximum Likelihood - `"CSS"`: Conditional Sum of Squares
+  - `d_method`: Method for estimating the fractional differencing parameter `d`:
+  -  `"GPH"`: Geweke–Porter–Hudak estimator - `"Whittle"`: Whittle likelihood-based estimator
+  -  `verbose`: Logical; if `TRUE`, shows ACF and PACF plots for diagnostic purposes.
+# 📤 Returns:
+ - 
+      -  `model`: The fitted ARIMA model object (on fractionally differenced series).
+      - `results`: A data frame with model performance metrics:
+          - **AIC**: Akaike Information Criterion
+          -  **SBIC**: Bayesian Information Criterion
+          -  **RMSE**: Root Mean Squared Error
+          -  **MAPE**: Mean Absolute Percentage Error
+          - **MPE**: Mean Prediction Error 
+          - **NMSE**: Normalized Mean Squared Error 
+          - **Estimated `d`** (if estimated) 
