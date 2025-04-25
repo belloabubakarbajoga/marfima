@@ -95,7 +95,5 @@ Thanks to the following individuals for their contributions to the MARFIMA proje
 | H.G. Dikko       | Contributor / Reviewer   | hgdikko@yahoo.com          |
 | B.B. Alhaji      | Contributor / Reviewer   | bbukar@nda.edu.ng          |
 
-Want to contribute? Feel free to fork the repo and submit a pull request!
-
 
 
