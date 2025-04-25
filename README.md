@@ -19,22 +19,68 @@ devtools::install("path/to/marfima")
 Marfima_fit(data, p, d, q, method, d_method, verbose)
 Fits a Modified ARFIMA (MARFIMA) model to a univariate time series.
 
-# 📥 Arguments 
-  - `data`: Numeric vector representing the time series. 
-  - `p`, `q`: Non-seasonal autoregressive (AR) and moving average (MA) orders. 
-  - `d`: Differencing parameter. Can be manually specified or estimated if not provided. 
-  - `method`: ARIMA estimation method. Options: - `"ML"`: Maximum Likelihood - `"CSS"`: Conditional Sum of Squares
-  - `d_method`: Method for estimating the fractional differencing parameter `d`:
-  -  `"GPH"`: Geweke–Porter–Hudak estimator - `"Whittle"`: Whittle likelihood-based estimator
-  -  `verbose`: Logical; if `TRUE`, shows ACF and PACF plots for diagnostic purposes.
-# 📤 Returns:
- - 
-      -  `model`: The fitted ARIMA model object (on fractionally differenced series).
-      - `results`: A data frame with model performance metrics:
-          - **AIC**: Akaike Information Criterion
-          -  **SBIC**: Bayesian Information Criterion
-          -  **RMSE**: Root Mean Squared Error
-          -  **MAPE**: Mean Absolute Percentage Error
-          - **MPE**: Mean Prediction Error 
-          - **NMSE**: Normalized Mean Squared Error 
-          - **Estimated `d`** (if estimated) 
+### 📤 Returns
+
+- **`model`**: Fitted ARIMA model on fractionally differenced data.  
+- **`results`**: Data frame of model evaluation metrics:
+  - AIC, BIC, AICc, BICC  
+  - RMSE: Root Mean Squared Error  
+  - MAPE: Mean Absolute Percentage Error  
+  - MPE: Mean Prediction Error  
+  - NMSE: Normalized Mean Squared Error  
+  - Estimated `d` (if applicable)
+
+---
+
+## 🔁 Function: `simulate_marfima()`
+
+Simulates a time series from a MARFIMA model (no seasonality).
+
+### 📥 Arguments
+
+- **`n`**: Number of time points to simulate.  
+- **`phi`**: AR coefficients (numeric vector).  
+- **`theta`**: MA coefficients (numeric vector).  
+- **`dfrac`**: Fractional differencing value (e.g., 0.3).  
+- **`dint`**: Integer differencing order (e.g., 1 or 2).  
+- **`burnin`**: Number of initial observations to discard *(default = 100)*.  
+- **`seed`**: Optional seed for reproducibility.
+
+### 📤 Returns
+
+- A simulated time series (`ts` object).
+
+---
+
+## 🔍 Example Usage
+
+```r
+# Simulate a MARFIMA(1, 2 + 0.3, 1) process
+set.seed(6533)
+sim_data <- simulate_marfima(n = 5000, phi = 0.2, theta = 0.3, dfrac = 0.3, dint = 2)
+
+# Fit a MARFIMA model with automatic d estimation using Whittle method
+fit <- Marfima_fit(sim_data, p = 1, q = 1, d_method = "Whittle")
+
+# View model performance
+print(fit$results)
+```
+
+---
+
+## 📚 Dependencies
+
+Before using MARFIMA, install the following R packages:
+
+```r
+install.packages(c("forecast", "fracdiff", "MASS"))
+```
+
+## 👤 Author
+
+**Abubakar Bello**  
+🧑‍💻  Statistics |Data Scientist | Time Series Analyst  
+📧 Email: [bellobajogagsu@gmail.com](mailto:bellobajogagsu@gmail.com)  
+🔗 GitHub: [github.com/belloabubakarbajoga](https://github.com/belloabubakarbajoga)  
+📍 Gombe State, Nigeria  
+
