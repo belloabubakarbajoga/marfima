@@ -8,7 +8,7 @@ Clone or download this repository, then source the R files manually or install a
 
 ```R
 # Option 1: Manually source the R scripts (if using raw files)
-source("https://raw.githubusercontent.com/belloabubakarbajoga/marfima")
+source("https://github.com/belloabubakarbajoga/marfima")
 source("https://raw.githubusercontent.com/belloabubakarbajoga/marfima")
 # Add additional script files as needed
 
