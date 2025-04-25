@@ -1,4 +1,4 @@
-# 📦 MARFIMA: Modified Autoregressive Fractional Integrated Moving Average Modeling in R
+![image](https://github.com/user-attachments/assets/c015509e-d9fd-497a-841b-7a8e3833aad9)# 📦 MARFIMA: Modified Autoregressive Fractional Integrated Moving Average Modeling in R
 
 This package provides tools for fitting and simulating MARFIMA models — an extension of ARFIMA models with modified fractional differencing, allowing improved modeling of long-memory time series data. It includes flexible estimation of the fractional differencing parameter via GPH or Whittle methods, and functionality for diagnostics, simulation, and performance metrics.
 
@@ -83,4 +83,19 @@ install.packages(c("forecast", "fracdiff", "MASS"))
 📧 Email: [bellobajogagsu@gmail.com](mailto:bellobajogagsu@gmail.com)  
 🔗 GitHub: [github.com/belloabubakarbajoga](https://github.com/belloabubakarbajoga)  
 📍 Gombe State, Nigeria  
+
+## 🤝 Contributors
+
+Thanks to the following individuals for their contributions to the MARFIMA project:
+
+| Name             | Role                     | GitHub  / Contact Email                                    |
+|------------------|--------------------------|---------------------------------------------|
+| Abubakar Bello   | Author / Maintainer      | [@belloabubakarbajoga](https://github.com/belloabubakarbajoga) |
+| Musa Tasiu       | Contributor / Reviewer   | dagastatistician@gmail.com |
+| H.G. Dikko       | Contributor / Reviewer   | hgdikko@yahoo.com          |
+| B.B. Alhaji      | Contributor / Reviewer   | bbukar@nda.edu.ng          |
+
+Want to contribute? Feel free to fork the repo and submit a pull request!
+
+
 
