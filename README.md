@@ -7,12 +7,19 @@ This package provides tools for fitting and simulating MARFIMA models — an ext
 Clone or download this repository, then source the R files manually or install as a local package:
 
 ```R
-# Option 1: Source R scripts manually
-source("Marfima_fit.R")
-source("simulate_marfima.R")
+# Option 1: Manually source the R scripts (if using raw files)
+source("https://raw.githubusercontent.com/belloabubakarbajoga/marfima")
+source("https://raw.githubusercontent.com/belloabubakarbajoga/marfima")
+# Add additional script files as needed
 
-# Option 2: Install as local package (requires devtools)
-devtools::install("path/to/marfima")
+# Option 2: Install the package locally using devtools (clone the repo first)
+# Make sure you have devtools installed: install.packages("devtools")
+devtools::install("path/to/cloned/marfima")
+
+# Option 3: Install directly from GitHub
+devtools::install_github("belloabubakarbajoga/marfima")
+
+
 ```
 
 # 📈 Core Functions
